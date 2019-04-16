@@ -72,6 +72,7 @@ matrix:
         - mvn deploy --settings .maven.xml -P release -q  || travis_terminate 1
     - if: branch = travis_deploy_central
       install: echo "travis_deploy_central HERE"  
+      script: echo "Install phase"
 #    - if: type = api
 #      name: "Perform release"
 #      before_script:
