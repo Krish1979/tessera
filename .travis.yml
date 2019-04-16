@@ -120,4 +120,4 @@ deploy:
     - echo "TODO: The release branch $branch_name must be manually merged back to master."
   skip_cleanup: true
   on:
-    - if  type = api
+    - if: branch = travis_deploy_central ANDtype = api
