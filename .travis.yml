@@ -112,15 +112,7 @@ after_success:
 
 deploy:
   provider: script
-  script:
-    - echo $GPG_SECRET_KEYS | base64 --decode | gpg --import
-    - echo $GPG_OWNERTRUST | base64 --decode | gpg --import-ownertrust
-    - release_version=`mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec`
-    - branch_name="release-${release_version}"
-    - git checkout -b $branch_name  || travis_terminate 1
-    - mvn --settings .maven.xml -B -DpushChanges=true release:prepare -DdryRun || travis_terminate 1
-    - mvn --settings .maven.xml -B -DpushChanges=true release:perform -DdryRun || travis_terminate 1
-    - echo "TODO: The release branch $branch_name must be manually merged back to master."
+  script: bash deploy.sh
   skip_cleanup: true
   on:
     branch: travis_deploy_central
