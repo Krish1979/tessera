@@ -124,4 +124,4 @@ deploy:
   skip_cleanup: true
   on:
     branch: travis_deploy_central
-    condition: type = api
+
