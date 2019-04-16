@@ -52,6 +52,7 @@
         <h2.version>1.4.199</h2.version>
         <owasp.plugin.version>5.0.0-M2</owasp.plugin.version>
         <logback.version>1.2.3</logback.version>
+        <project.scm.id>github</project.scm.id>
     </properties>
 
     <build>
