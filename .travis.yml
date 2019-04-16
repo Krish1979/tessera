@@ -73,6 +73,7 @@ matrix:
     - if: branch = travis_deploy_central
       install: echo "travis_deploy_central HERE"  
       script: echo "Install phase"
+     
 #    - if: type = api
 #      name: "Perform release"
 #      before_script:
@@ -122,4 +123,5 @@ deploy:
     - echo "TODO: The release branch $branch_name must be manually merged back to master."
   skip_cleanup: true
   on:
+    branch: travis_deploy_central
     condition: type = api
